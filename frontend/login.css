@@ -1,0 +1,516 @@
+/*body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    color: #E0E0E0;
+    overflow: hidden;
+    background-image: url('images/SM-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.css-logo {
+    position: relative;
+    width: 120px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+.logo-n {
+    position: relative;
+    font-size: 5em;
+    font-weight: 700;
+    line-height: 0.8;
+    z-index: 2;
+    text-shadow: -1px -1px 0px rgba(0,0,0,0.4),
+                 1px -1px 0px rgba(0,0,0,0.4),
+                 -1px 1px 0px rgba(0,0,0,0.4),
+                 1px 1px 0px rgba(0,0,0,0.4),
+                 0 0 5px rgba(255,255,255,0.8);
+    color: white;
+}
+
+.logo-x {
+    position: absolute;
+    font-size: 5em;
+    font-weight: 400;
+    line-height: 0.8;
+    color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    transform: translateX(14px);
+}
+
+.logo-text {
+    position: absolute;
+    bottom: -10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 400;
+}
+
+.auth-card {
+    background-color: transparent;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.auth-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: calc(100% - 40px);
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #997CA7;
+    color: #FFFFFF;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+input::placeholder {
+    color: #4A3C53;
+    opacity: 1;
+}
+
+input:focus {
+    box-shadow: 0 0 0 2px #C4B4CC;
+}
+
+.auth-button {
+    width: 200px;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: #8f60a6;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+.auth-button:hover {
+    background-color: #6A4B7D;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.auth-links {
+    margin-top: 30px;
+    font-size: 0.9em;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.auth-links p {
+    margin: 0;
+    color: #C4B4CC;
+}
+
+.forgot-password-link, .signup-link {
+    color: #C4B4CC;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover, .signup-link:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.signup-link {
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .main-container {
+        max-width: 380px;
+    }
+    .auth-title {
+        font-size: 2em;
+    }
+    .logo-n, .logo-x {
+        font-size: 4.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-position: top center;
+        overflow-y: auto;
+        padding: 20px 0;
+    }
+    .main-container {
+        max-width: 90%;
+        padding: 15px;
+    }
+    .auth-title {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    input[type="text"], input[type="password"] {
+        width: 100%;
+    }
+    .auth-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .css-logo {
+        width: 90px;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+    .logo-n, .logo-x {
+        font-size: 3.5em;
+    }
+    .logo-text {
+        font-size: 0.7em;
+        bottom: -8px;
+    }
+    .auth-title {
+        font-size: 1.6em;
+    }
+    input[type="text"], input[type="password"] {
+        padding: 12px 15px;
+        font-size: 0.95em;
+    }
+    .auth-button {
+        padding: 12px;
+        font-size: 1em;
+    }
+    .auth-links {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 360px) {
+    .main-container {
+        max-width: 95%;
+    }
+    .auth-title {
+        font-size: 1.4em;
+    }
+    .logo-n, .logo-x {
+        font-size: 3em;
+    }
+}*/
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    color: #E0E0E0;
+    overflow: hidden;
+    background-image: url('images/SM-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.css-logo {
+    position: relative;
+    width: 120px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+.logo-n {
+    position: relative;
+    font-size: 5em;
+    font-weight: 700;
+    line-height: 0.8;
+    z-index: 2;
+    text-shadow: -1px -1px 0px rgba(0,0,0,0.4),
+                 1px -1px 0px rgba(0,0,0,0.4),
+                 -1px 1px 0px rgba(0,0,0,0.4),
+                 1px 1px 0px rgba(0,0,0,0.4),
+                 0 0 5px rgba(255,255,255,0.8);
+    color: white;
+}
+
+.logo-x {
+    position: absolute;
+    font-size: 5em;
+    font-weight: 400;
+    line-height: 0.8;
+    color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    transform: translateX(14px);
+}
+
+.logo-text {
+    position: absolute;
+    bottom: -10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 400;
+}
+
+.auth-card {
+    background-color: transparent;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.auth-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: calc(100% - 40px);
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #997CA7;
+    color: #FFFFFF;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+input::placeholder {
+    color: #4A3C53;
+    opacity: 1;
+}
+
+input:focus {
+    box-shadow: 0 0 0 2px #C4B4CC;
+}
+
+.auth-button,.reset-btn {
+    width: 200px;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: #8f60a6;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+.auth-button:hover,.reset-btn:hover {
+    background-color: #6A4B7D;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.auth-links {
+    margin-top: 30px;
+    font-size: 0.9em;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.auth-links p {
+    margin: 0;
+    color: #C4B4CC;
+}
+
+.forgot-password-link, .signup-link {
+    color: #C4B4CC;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover, .signup-link:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.signup-link {
+    font-weight: 600;
+}
+.auth-message {
+    margin-top: 15px;
+    font-size: 0.95em;
+    font-weight: 600;
+}
+
+.auth-message.success {
+    color: #4CAF50; 
+}
+
+.auth-message.error {
+    color: #F44336; 
+}
+
+/* Add at bottom of login.css */
+.forgot-container {
+  width: 400px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.forgot-container h2 {
+  color: #E0E0E0;
+  margin-bottom: 20px;
+}
+
+#reset-message {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+#reset-message.success {
+  color: #4CAF50;
+}
+
+#reset-message.error {
+  color: #F44336;
+}
+
+@media (max-width: 1024px) {
+    .main-container {
+        max-width: 380px;
+    }
+    .auth-title {
+        font-size: 2em;
+    }
+    .logo-n, .logo-x {
+        font-size: 4.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-position: top center;
+        overflow-y: auto;
+        padding: 20px 0;
+    }
+    .main-container {
+        max-width: 90%;
+        padding: 15px;
+    }
+    .auth-title {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    input[type="text"], input[type="password"],input[type="email"] {
+        width: 100%;
+    }
+    .auth-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .css-logo {
+        width: 90px;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+    .logo-n, .logo-x {
+        font-size: 3.5em;
+    }
+    .logo-text {
+        font-size: 0.7em;
+        bottom: -8px;
+    }
+    .auth-title {
+        font-size: 1.6em;
+    }
+    input[type="text"], input[type="password"],input[type="email"] {
+        padding: 12px 15px;
+        font-size: 0.95em;
+    }
+    .auth-button {
+        padding: 12px;
+        font-size: 1em;
+    }
+    .auth-links {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 360px) {
+    .main-container {
+        max-width: 95%;
+    }
+    .auth-title {
+        font-size: 1.4em;
+    }
+    .logo-n, .logo-x {
+        font-size: 3em;
+    }
+}
+
+

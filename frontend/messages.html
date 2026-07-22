@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - Nexus</title>
+    <link rel="stylesheet" href="messages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-n">N</span><span class="logo-x">X</span>
+            </div>
+            <nav class="main-nav">
+                <a href="search.html" id="nav-search-link">Search</a>
+                <a href="messages.html" id="nav-messages-link">Messages</a>
+                <a href="#" id="nav-profile-link">Profile</a>
+                <button id="logout-button">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="chat-container" id="chat-container">
+        <div class="conversations-list" id="conversations-list">
+        </div>
+
+        <div class="chat-window">
+            <div class="chat-header" id="chat-header">
+                <button id="back-to-conversations" class="back-button">&larr;</button>
+                <span id="recipient-username">Select a conversation</span>
+            </div>
+            <div class="messages-display" id="messages-display">
+                <p class="no-conversation-selected">Select a conversation to start chatting.</p>
+            </div>
+            <form class="message-input-form" id="message-input-form">
+                <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="messages.js" defer></script>
+</body>
+</html>

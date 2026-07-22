@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Feed</title>
+    <link rel="stylesheet" href="feed.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-n">N</span><span class="logo-x">X</span>
+            </div>
+            <nav class="main-nav">
+                <a href="search.html" id="nav-search-link">Search</a>
+                <a href="messages.html" id="nav-messages-link">Messages</a>
+                <button id="create-post-btn">Post</button>
+                <a href="/profile.html" id="nav-profile-link">Profile</a>
+                <button id="logout-button">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="feed-container">
+        <div id="posts-container" class="posts-container">
+        </div>
+    </main>
+
+    <div id="post-modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-modal">&times;</button>
+            <h3>Create a New Post</h3>
+            <form id="create-post-form">
+                <div class="file-input-wrapper">
+                    <label for="post-media-file" class="file-input-label">Choose Photo/Video</label>
+                    <input type="file" id="post-media-file" accept="image/*,video/*">
+                    <span id="file-name-display">No file chosen</span>
+                </div>
+                <textarea id="post-caption" placeholder="Write a caption..."></textarea>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+    </div>
+    <script src="feed.js" defer></script>
+</body>
+</html>

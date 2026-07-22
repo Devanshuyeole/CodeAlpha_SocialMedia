@@ -1,0 +1,413 @@
+body {
+    margin: 0;
+    padding-top: 80px;
+    font-family: 'Montserrat', sans-serif;
+    color: #E0E0E0;
+    background-image: url('images/SM-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.main-header {
+    background-color: rgba(22, 22, 35, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(143, 96, 166, 0.2);
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.logo {
+    position: relative;
+    width: 90px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    font-family: 'Playfair Display', serif;
+}
+.logo .logo-n {
+    position: relative;
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 0.8;
+    z-index: 2;
+    color: white;
+    text-shadow: none;
+}
+.logo .logo-x {
+    position: absolute;
+    font-size: 3em;
+    font-weight: 400;
+    line-height: 0.8;
+    color: rgba(66, 63, 63, 0.6);
+    z-index: 1;
+    transform: translateX(12px);
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.main-nav a, .main-nav button {
+    color: #C4B4CC;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+.main-nav a:hover {
+    color: #FFFFFF;
+}
+#create-post-btn {
+    background-color: #8f60a6;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+#create-post-btn:hover {
+    background-color: #6A4B7D;
+    color: white;
+}
+#logout-button {
+    background-color: transparent;
+    border: 1px solid #C4B4CC;
+    padding: 7px 16px;
+    border-radius: 8px;
+}
+#logout-button:hover {
+    background-color: #C4B4CC;
+    color: #1a1a2e;
+}
+.feed-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+.modal-content {
+    background-color: #16213e;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(143, 96, 166, 0.3);
+}
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2em;
+    color: #C4B4CC;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+#create-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.file-input-wrapper {
+    border: 2px dashed #997CA7;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+.file-input-wrapper:hover {
+    border-color: #8f60a6;
+}
+#post-media-file {
+    display: none;
+}
+.file-input-label {
+    color: #C4B4CC;
+    font-weight: 600;
+    cursor: pointer;
+}
+#file-name-display {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #a9a9a9;
+}
+#post-caption {
+    width: 100%;
+    min-height: 80px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #997CA7;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    resize: vertical;
+    box-sizing: border-box;
+    outline: none;
+}
+#post-caption::placeholder {
+    color: #4A3C53;
+}
+#create-post-form button[type="submit"] {
+    padding: 12px 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: #8f60a6;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+#create-post-form button[type="submit"]:hover {
+    background-color: #6A4B7D;
+}
+.post-card {
+    background-color: rgba(44, 7, 57, 0.5);
+    padding: 20px 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(143, 96, 166, 0.3);
+}
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.post-username {
+    font-weight: 700;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+.post-username:hover {
+    text-decoration: underline;
+}
+.post-date {
+    font-size: 0.8em;
+    color: #C4B4CC;
+}
+.post-body p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.post-actions {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid rgba(143, 96, 166, 0.2);
+    padding-top: 15px;
+}
+.post-actions button {
+    background: none;
+    border: none;
+    color: #C4B4CC;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+.post-actions button:hover {
+    color: #FFFFFF;
+}
+.post-actions button.liked {
+    color: #e94560;
+}
+.comment-section {
+    margin-top: 15px;
+    border-top: 1px solid rgba(143, 96, 166, 0.2);
+    padding-top: 15px;
+}
+.comment {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+.comment strong {
+    color: white;
+    margin-right: 8px;
+    cursor: pointer;
+}
+.comment strong:hover {
+    text-decoration: underline;
+}
+.comment-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+.comment-input {
+    flex-grow: 1;
+    background-color: #997CA7;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+.comment-input::placeholder {
+    color: #4A3C53;
+}
+.comment-submit-btn {
+    background-color: #8f60a6;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.comment-submit-btn:hover {
+    background-color: #6A4B7D;
+}
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.owner-controls {
+    display: flex;
+    gap: 10px;
+}
+.owner-controls button, .delete-comment-btn {
+    background: none;
+    border: none;
+    color: #C4B4CC;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+.owner-controls button:hover, .delete-comment-btn:hover {
+    color: #e94560;
+}
+.comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post-body textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid #997CA7;
+    border-radius: 8px;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.edit-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.edit-controls button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.save-edit-btn {
+    background-color: #8f60a6;
+    color: white;
+}
+
+.cancel-edit-btn {
+    background-color: #555;
+    color: white;
+}
+.post-image {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+@media (max-width: 768px) {
+    .header-container {
+        justify-content: center;
+        position: relative;
+    }
+    .logo {
+        position: absolute;
+        left: 20px;
+        width: 80px;
+    }
+    .main-nav {
+        justify-content: flex-end;
+        flex-grow: 1;
+    }
+}
+@media (max-width: 480px) {
+    body {
+        padding-top: 70px;
+    }
+    .main-nav {
+        gap: 10px;
+    }
+    .main-nav a, .main-nav button {
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+    #logout-button {
+        padding: 5px 10px;
+    }
+}

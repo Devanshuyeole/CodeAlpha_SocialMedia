@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-n">N</span><span class="logo-x">X</span>
+            </div>
+            <nav class="main-nav">
+                <button id="logout-button">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-header-card">
+            <div class="profile-info">
+                <h2 id="profile-username"></h2>
+                <div class="profile-stats">
+                    <span><strong id="post-count">0</strong> posts</span>
+                    <span><strong id="follower-count">0</strong> followers</span>
+                    <span><strong id="following-count">0</strong> following</span>
+                </div>
+                <p id="profile-bio"></p>
+            </div>
+            <div class="profile-action">
+                <button id="message-user-btn" style="display: none;">Message</button>
+                <button id="profile-action-btn"></button>
+            </div>
+        </div>
+
+        <div class="profile-posts-grid" id="profile-posts-grid">
+        </div>
+    </main>
+    
+    <div id="edit-profile-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-edit-modal-btn" class="close-modal">&times;</button>
+            <h3>Edit Your Profile</h3>
+            <form id="edit-profile-form">
+                <label for="edit-bio">Bio</label>
+                <textarea id="edit-bio" placeholder="Tell us about yourself..."></textarea>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="profile.js" defer></script>
+</body>
+</html>
